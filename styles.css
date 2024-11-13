@@ -1,0 +1,251 @@
+/*
+=============== 
+Fonts & Imports
+=============== 
+*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+/*
+=============== 
+Variables
+=============== 
+*/
+:root {
+  --clr-primary: hsl(205, 78%, 60%);
+  --clr-primary-dark: hsl(205, 86%, 17%);
+  --clr-primary-light: hsl(205, 90%, 88%);
+  --clr-grey-dark: hsl(209, 61%, 16%);
+  --clr-grey-light: hsl(210, 36%, 96%);
+  --clr-grey-medium: hsl(209, 34%, 40%);
+  --clr-white: #fff;
+  --clr-black: #000;
+  
+  /* Font settings */
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+
+  /* Spacing, shadows, and border-radius */
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --transition: all 0.3s ease;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+/*
+=============== 
+Global Styles
+=============== 
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-light);
+  color: var(--clr-grey-dark);
+  line-height: 1.6;
+  font-size: 1rem;
+  padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+h1, h2 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  font-family: var(--ff-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--clr-primary);
+}
+
+/* Utility Class for Centering */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*
+=============== 
+Nav
+=============== 
+*/
+nav {
+  background: var(--clr-white);
+  padding: 1rem;
+  box-shadow: var(--dark-shadow);
+}
+
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 2rem;
+  color: var(--clr-primary-dark);
+}
+
+.nav-links {
+  display: flex;
+}
+
+nav a {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--clr-primary-dark);
+  letter-spacing: var(--spacing);
+  margin-left: 1.5rem;
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--clr-primary);
+}
+
+/*
+=============== 
+Main Content
+=============== 
+*/
+main {
+  min-height: calc(100vh - 6rem);
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  text-align: center;
+  background: var(--clr-white);
+  padding: 2rem;
+  box-shadow: var(--light-shadow);
+  border-radius: var(--radius);
+  max-width: var(--fixed-width);
+  width: 100%;
+}
+
+.color-display {
+  height: 150px; /* Fixed height for the color display */
+  width: 100%; /* Fill the width of its container */
+  max-width: 300px; /* Limit the width */
+  margin: 1rem auto; /* Center it */
+  border-radius: var(--radius);
+  transition: background-color 0.3s ease-in-out;
+  margin-bottom: 1.5rem;
+}
+
+.color {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--clr-primary-dark);
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/*
+=============== 
+Buttons
+=============== 
+*/
+.btn {
+  font-family: var(--ff-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  font-weight: 700;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.btn-hero {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border-color: var(--clr-primary);
+  box-shadow: var(--light-shadow);
+}
+
+.btn-hero:hover {
+  background: var(--clr-primary-dark);
+  color: var(--clr-white);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-copy {
+  background: var(--clr-grey-light);
+  color: var(--clr-grey-dark);
+  border-color: var(--clr-grey-dark);
+}
+
+.btn-copy:hover {
+  background: var(--clr-grey-dark);
+  color: var(--clr-white);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*
+=============== 
+Media Queries
+=============== 
+*/
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .container {
+    max-width: 600px; /* Limit the container size on larger screens */
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 700px;
+  }
+}
